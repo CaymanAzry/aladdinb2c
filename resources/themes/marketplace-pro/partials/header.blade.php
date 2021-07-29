@@ -1,0 +1,202 @@
+<header>
+    
+    <!-- header left mobie -->
+    <div class="header-mobile d-md-none" style="background-color:#086E38; color:white">
+        <div class="mobile hidden-md-up text-xs-center d-flex align-items-center justify-content-around">
+
+            <!-- menu left -->
+            <div id="mobile_mainmenu" class="item-mobile-top">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+
+            <!-- logo -->
+            <div class="mobile-logo">
+                <a href="{{ url('/') }}">
+                    <img class="img-fluid" src="{{ asset('uploads/settings/logo.png')}}"
+                         alt="{{ \Settings::get('site_name', 'Aladdin') }}" style="max-width: 100px">
+                </a>
+            </div>
+
+            <!-- menu right -->
+            <!--<div class="mobile-menutop" data-target="#mobile-pagemenu">-->
+            <!--    <i class="fa fa-ellipsis-h"></i>-->
+            <!--</div>-->
+            <a href="#">
+                        <div class="header-cart tiva-toggle-btn">
+                            <span style="border-radius:10px"  class="badge badge-danger cart-products-count"
+                                  id="cart-header-count">{{ \ShoppingCart::countAllInstances() }}</span>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </div>
+                    </a>
+            <tr class="total">
+                                    
+                                    <td id="cart-header-count">{{ \ShoppingCart::totalAllInstances() }}</td>
+                                </tr>
+        </div>
+
+        <!-- search -->
+        <div id="mobile_search" class="d-flex">
+            <!--<div id="mobile_search_content">-->
+            <!--    <form method="get" action="{{ url('shop') }}">-->
+            <!--        <input type="text" name="search"-->
+            <!--               placeholder="@lang('Marketplace::labels.shop.search')"-->
+            <!--               value="{{request()->get('search')}}" class="ui-autocomplete-input">-->
+            <!--        <button type="submit">-->
+            <!--            <i class="fa fa-search"></i>-->
+            <!--        </button>-->
+            <!--    </form>-->
+            <!--</div>-->
+            <div class="desktop_cart">
+                <div class="blockcart block-cart cart-preview tiva-toggle">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- header desktop --> 
+    <div class="header-top d-xs-none" style="background-color: #086E38; font-family:POPPINS; color:white; padding: 15px 0px 5px 0px;">
+        <div class="container">
+            <div class="row">
+                <!-- logo -->
+                <div class="col-sm-2 col-md-2 d-flex align-items-center">
+                    <div id="logo">
+                        <a href="{{ url('/') }}">
+                            <img class="img-fluid" src="{{asset('uploads/settings/logo.png') }}"
+                                 alt="{{ \Settings::get('site_name', 'Aladdin') }}">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- menu -->
+                <div class="main-menu col-sm-1 col-md-1 align-items-center justify-content-center navbar-expand-md">
+                    <div class="menu navbar collapse navbar-collapse">
+                        <ul class="menu-top navbar-nav">
+                            @include('partials.menu.menu_item', ['menus' => Menus::getMenu('frontend_top','active')])
+                        </ul>
+                    </div>
+                </div>
+                <!-- search-->
+                <div id="search_widget" class="col-sm-8 col-md-8 align-items-center justify-content-end d-flex">
+                    <form method="get" action="{{ url('shop') }}" style="margin-top: -5px">
+                        <input style="height: 30px" type="text" name="search"
+                               placeholder="Trending Products"
+                               value="{{request()->get('search')}}" class="ui-autocomplete-input auto-complete" autocomplete="off"  data-url="{{ url('shop/autocomeplete') }}">
+                        <button type="submit" style="height: 35px;background-color: green; border-top-right-radius: 20px;border-bottom-right-radius: 20px;padding:0px 20px 0px 20px; margin-right: -13px; margin-top: -1px; color:white">
+                            <i style="color:white">Search</i>
+                        </button>
+                    </form>
+
+                    <!-- acount  -->
+                    <div id="block_myaccount_infos" class="hidden-sm-down dropdown">
+                        <div class="myaccount-title">
+                            @auth
+                                <a href="#acount" data-toggle="collapse" class="acount">
+                                    <img style="max-width: 22px" src="{{ user()->picture_thumb }}">
+                                    <span style="color:white">{{ auth()->user()->name }}</span>
+                                    <i style="color:white" class="fa fa-angle-down" aria-hidden="true"></i>
+                                </a>
+                            @else
+                                <a href="#acount" data-toggle="collapse" class="acount">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>@lang('corals-marketplace-pro::labels.auth.login')</span>
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </a>
+                            @endauth
+                        </div>
+                        <div id="acount" class="collapse">
+                            <div class="account-list-content">
+                                @auth
+                                    <div>
+                                        <a class="login" href="{{ url('dashboard') }}" rel="nofollow"
+                                           title="Log in to your customer account">
+                                            <i class="fa fa-cog"></i>
+                                            <span>@lang('corals-marketplace-pro::labels.partial.dashboard')</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="login" href="{{ url('profile') }}" rel="nofollow"
+                                           title="Log in to your customer account">
+                                            <i class="fa fa-sign-in"></i>
+                                            <span>@lang('corals-marketplace-pro::labels.partial.my_profile')</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="register" href="{{ route('logout') }}" data-action="logout"
+                                           rel="nofollow"
+                                           title="Register Account">
+                                            <i class="fa fa-user"></i>
+                                            <span>@lang('corals-marketplace-pro::labels.partial.logout')</span>
+                                        </a>
+                                    </div>
+                                    <div style="margin-bottom: 10px;" id="desktop_currency_selector"
+                                         class="currency-selector groups-selector hidden-sm-down">
+                                        <ul class="list-inline-2">
+                                            @php \Actions::do_action('post_display_frontend_menu') @endphp
+                                        </ul>
+                                    </div>
+                                    <!--<div id="desktop_language_selector"-->
+                                    <!--     class="currency-selector groups-selector hidden-sm-down"-->
+                                    <!--     style="padding-bottom: 50px;">-->
+                                    <!--    @if(count(\Settings::get('supported_languages', [])) > 1)-->
+                                    <!--        {!! \Language::flags('list-inline','list-inline-item') !!}-->
+                                    <!--    @endif-->
+                                    <!--</div>-->
+                                @else
+                                    <div>
+                                        <a class="check-out" href="{{ route('login') }}" rel="nofollow"
+                                           title="Checkout">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            <span> @lang('corals-marketplace-pro::labels.partial.login')</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="{{ route('register') }}" title="My Wishlists">
+                                            <i class="fa fa-heart"></i>
+                                            <span> @lang('corals-marketplace-pro::labels.partial.register')</span>
+                                        </a>
+                                    </div>
+                                @endauth
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desktop_cart">
+                        <div class="blockcart block-cart cart-preview tiva-toggle">
+                            <div class="header-cart tiva-toggle-btn">
+                                    <span class="cart-products-count"
+                                          id="cart-header-count">{{ \ShoppingCart::countAllInstances() }}</span>
+                                <i style="color:white" class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </div>
+                            <div class="cart_summary">
+                                @include('partials.cart_summary')
+                            </div>
+                        </div>
+                    </div>
+
+                    @auth
+                        <div class="desktop_cart">
+                            <a class="waves-effect waves-dark"
+                               href="{{ url('notifications') }}"
+                               aria-expanded="false">
+                                <div class="notifications">
+                                    <div class="blockcart block-cart cart-preview tiva-toggle">
+                                        <div class="header-cart tiva-toggle-btn">
+                                            @if($unreadNotifications = user()->unreadNotifications()->count() > 0)
+                                                <span class="">
+                                      @if($unreadNotifications = user()->unreadNotifications()->count())
+                                                        {{ $unreadNotifications }}
+                                                    @endif
+                                    </span>
+                                            @endif
+                                            <i style="color:white" class="fa fa-bell"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endauth
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

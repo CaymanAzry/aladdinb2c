@@ -1,0 +1,8 @@
+[21-Jul-2021 23:17:43 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/aladdins/public_html/aladdin_staging/database/migrations/2020_06_22_121258_create_failed_jobs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/database/migrations/2020_06_22_121258_create_failed_jobs_table.php on line 7
+[24-Jul-2021 07:23:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/aladdins/public_html/aladdin_staging/database/migrations/2020_06_22_121258_create_failed_jobs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/database/migrations/2020_06_22_121258_create_failed_jobs_table.php on line 7

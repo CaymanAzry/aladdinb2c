@@ -1,0 +1,4 @@
+[21-Jul-2021 23:15:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/aladdins/public_html/aladdin_staging/app/Exceptions/Handler.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/app/Exceptions/Handler.php on line 18

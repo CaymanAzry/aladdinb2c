@@ -1,0 +1,4 @@
+[21-Jul-2021 23:15:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/aladdins/public_html/aladdin_staging/app/Http/Kernel.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/app/Http/Kernel.php on line 9

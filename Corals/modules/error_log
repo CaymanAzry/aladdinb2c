@@ -1,0 +1,4 @@
+[21-Jul-2021 23:14:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/aladdins/public_html/aladdin_staging/Corals/modules/ModulesServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/Corals/modules/ModulesServiceProvider.php on line 7

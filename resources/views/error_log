@@ -1,0 +1,1 @@
+[21-Jul-2021 23:22:38 UTC] PHP Fatal error:  'break' not in the 'loop' or 'switch' context in /home/aladdins/public_html/aladdin_staging/resources/views/front.blade.php on line 259

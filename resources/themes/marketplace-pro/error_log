@@ -1,0 +1,4 @@
+[22-Jul-2021 14:16:23 UTC] PHP Fatal error:  Uncaught Error: Class 'Schema' not found in /home/aladdins/public_html/aladdin_staging/resources/themes/marketplace-pro/demo_data.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/resources/themes/marketplace-pro/demo_data.php on line 5

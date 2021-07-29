@@ -1,0 +1,8 @@
+[21-Jul-2021 23:17:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/aladdins/public_html/aladdin_staging/database/factories/SubscriptionFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/database/factories/SubscriptionFactory.php on line 16
+[21-Jul-2021 23:17:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/aladdins/public_html/aladdin_staging/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/database/factories/UserFactory.php on line 16

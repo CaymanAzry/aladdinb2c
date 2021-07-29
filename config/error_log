@@ -1,0 +1,68 @@
+[21-Jul-2021 14:26:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/activitylog.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/activitylog.php on line 8
+[21-Jul-2021 14:26:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/analytics.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/analytics.php on line 8
+[21-Jul-2021 14:26:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/app.php on line 16
+[21-Jul-2021 14:26:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/broadcasting.php on line 18
+[21-Jul-2021 14:26:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/cache.php on line 18
+[21-Jul-2021 14:26:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/currency.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/currency.php on line 16
+[21-Jul-2021 14:27:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/database.php on line 16
+[21-Jul-2021 14:27:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/datatables.php:70
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/datatables.php on line 70
+[21-Jul-2021 14:27:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/debugbar.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/debugbar.php on line 15
+[21-Jul-2021 14:27:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/filesystems.php on line 16
+[21-Jul-2021 14:27:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/logging.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/logging.php on line 19
+[21-Jul-2021 14:27:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/mail.php on line 19
+[21-Jul-2021 14:27:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/media-library.php:129
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/media-library.php on line 129
+[21-Jul-2021 14:27:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/queue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/queue.php on line 18
+[21-Jul-2021 14:27:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/services.php on line 18
+[21-Jul-2021 14:27:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/aladdins/public_html/aladdin_staging/config/session.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/session.php on line 19
+[21-Jul-2021 14:27:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/aladdins/public_html/aladdin_staging/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/config/view.php on line 17

@@ -1,0 +1,28 @@
+[21-Jul-2021 14:28:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/aladdins/public_html/aladdin_staging/routes/api.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/routes/api.php on line 16
+[21-Jul-2021 14:28:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Broadcast' not found in /home/aladdins/public_html/aladdin_staging/routes/channels.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/routes/channels.php on line 5
+[21-Jul-2021 14:28:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Artisan' not found in /home/aladdins/public_html/aladdin_staging/routes/console.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/routes/console.php on line 16
+[21-Jul-2021 14:28:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/aladdins/public_html/aladdin_staging/routes/web.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/routes/web.php on line 9
+[24-Jul-2021 07:16:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/aladdins/public_html/aladdin_staging/routes/web.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/routes/web.php on line 9
+[24-Jul-2021 07:24:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Route' not found in /home/aladdins/public_html/aladdin_staging/routes/web.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/routes/web.php on line 9
+[24-Jul-2021 09:57:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\Facades\Broadcast' not found in /home/aladdins/public_html/aladdin_staging/routes/channels.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/routes/channels.php on line 5

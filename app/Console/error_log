@@ -1,0 +1,8 @@
+[21-Jul-2021 23:14:50 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/aladdins/public_html/aladdin_staging/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/app/Console/Kernel.php on line 8
+[24-Jul-2021 07:33:30 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Console\Kernel' not found in /home/aladdins/public_html/aladdin_staging/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/aladdins/public_html/aladdin_staging/app/Console/Kernel.php on line 8
