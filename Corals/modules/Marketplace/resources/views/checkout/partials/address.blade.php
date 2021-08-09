@@ -129,6 +129,16 @@
             var send_qty     = $('input[name="qty"]').val();
             
             console.log(seen);
+
+            $('input[name="order_address[first_name]"]').val($('input[name="billing_address[first_name]"]').val());
+            $('input[name="order_address[last_name]"]').val($('input[name="billing_address[last_name]"]').val());
+            $('input[name="order_address[phone_number]"]').val($('input[name="billing_address[phone_number]"]').val());
+            $('input[name="order_address[address_1]"]').val($('input[name="billing_address[address_1]"]').val());
+            $('input[name="order_address[address_2]"]').val($('input[name="billing_address[address_2]"]').val());
+            $('input[name="order_address[city]"]').val($('input[name="billing_address[city]"]').val());
+            $('input[name="order_address[state]"]').val($('input[name="billing_address[state]"]').val());
+            $('input[name="order_address[zip]"]').val($('input[name="billing_address[zip]"]').val());
+            $('select[name="order_address[country]"]').val($('select[name="billing_address[country]"]').val());
             
             $.ajax({
                         type: "POST",
@@ -156,6 +166,16 @@
             var send_zip     = $('input[name="billing_address[zip]"]').val();
             var send_state   = $('input[name="billing_address[state]"]').val();
             var send_country = $('select[name="billing_address[country]"]').val();
+
+            $('input[name="order_address[first_name]"]').val($('input[name="billing_address[first_name]"]').val());
+            $('input[name="order_address[last_name]"]').val($('input[name="billing_address[last_name]"]').val());
+            $('input[name="order_address[phone_number]"]').val($('input[name="billing_address[phone_number]"]').val());
+            $('input[name="order_address[address_1]"]').val($('input[name="billing_address[address_1]"]').val());
+            $('input[name="order_address[address_2]"]').val($('input[name="billing_address[address_2]"]').val());
+            $('input[name="order_address[city]"]').val($('input[name="billing_address[city]"]').val());
+            $('input[name="order_address[state]"]').val($('input[name="billing_address[state]"]').val());
+            $('input[name="order_address[zip]"]').val($('input[name="billing_address[zip]"]').val());
+            $('select[name="order_address[country]"]').val($('select[name="billing_address[country]"]').val());
             
             var send_product = $('input[name="product"]').val();
                 var send_qty     = $('input[name="qty"]').val();
@@ -197,26 +217,6 @@
                         }
                     });
         }
-        
-        $(document).on('change', ".vendor-drop", function () {
-                
-                var ship_price = 0;
-                
-                $('.vendor-drop').each(function() {
-                    
-                    var price = 0;
-                    
-                    if($(this).val().length !== 0){
-                        var price = parseFloat($(this).val());
-                    }
-                    
-                    if (price!=''){
-                        ship_price=parseFloat(ship_price)+parseFloat(price);
-                    }
-                });
-                $('input[name="price"]').val(ship_price);
-            });
-        
         
     });
     

@@ -113,6 +113,39 @@
 
                 {!! \Actions::do_action('marketplace_order_post_details', $order) !!}
             @endcomponent
+            <div class="card box mt-3 mb-3">
+                <div class="box-header card-header with-border ">
+                    <h3 class="box-title card-title ">Easy Parcel</h3>
+
+                    <div class="box-tools pull-right">
+                        
+                    </div>
+                </div>
+                <div class="box-body card-body">
+                    <div class="table-responsive">
+                        <div class="ep-section">
+                            
+                        </div>
+<!--                                     <table class="table color-table info-table table table-hover table-striped table-condensed ep-table">
+                                        <thead>
+                                        <tr>
+                                            <th>EP Order No.</th>
+                                            <th>Courier</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3">{{ $order->id }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>-->
+                                </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer card-footer hidden"></div>
+                <!-- /.box-footer-->
+            </div>
             @component('components.box')
                 @slot('box_title')
                     @lang('Marketplace::labels.order.transactions.title')
@@ -144,6 +177,7 @@
                     </div>
                 @endif
             @endcomponent
+
 
         </div>
         <div class="col-md-4">
