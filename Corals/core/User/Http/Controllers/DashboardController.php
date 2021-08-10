@@ -44,4 +44,12 @@ class DashboardController extends BaseController
     
         return view('User::livestream.index', compact('listproducts'));
     }
+
+    public function store(Request $request)
+    {
+         $product = new LiveStream;
+         $product->title = $request->title;
+         $product->save();  
+         return view('User::livestream.index');
+    }
 }

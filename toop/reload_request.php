@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "aladin";
+$servername = "128.199.86.241";
+$username = "aladdins_store";
+$password = "E5B&yM2XiNp!";
+$dbname = "aladdins_store";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -76,6 +76,8 @@ curl_close($ch);
             
 $json = json_decode($return,true);
 
+echo $return;
+
 if($json['status']=='true'){
 	$sql="INSERT INTO topups(carrier,amount,number,email,reload_id) VALUES ('".$_POST['carrier']."','".$_POST['amount']."','".$_POST['phone_number']."','','".$json['reload_id']."')";
 
@@ -86,12 +88,29 @@ if($json['status']=='true'){
 
 	  	alert('Your number successfully reload!');
 
-	  	window.location.href = '/aladdin_staging/public/topup';
+	  	window.location.href = '/aladdin_b2c/topup';
 
 	  </script>
 
 	  ";
 	}
+	
+
+}else{
+    
+    echo "
+
+	  <script>
+
+	  	alert('Topup uncussessful. ".$json['msg']."');
+
+	  	window.location.href = '/aladdin_b2c/topup';
+
+	  </script>
+
+	  ";
+	
+    
 }
 
 

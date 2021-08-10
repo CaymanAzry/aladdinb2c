@@ -48,10 +48,6 @@
 
 
         @endforeach
-
-        <?php $_SESSION['test']='test'; ?>
-
-
         <div class="table-responsive">
             <table class="table color-table info-table table table-hover table-striped table-condensed">
                 <tbody>
@@ -97,23 +93,9 @@
         <input type="hidden" name="UserName" value="">
         <input type="hidden" name="UserEmail" value="">
         <input type="hidden" name="UserContact" value="">
-
-        <input type="hidden" name="order_address[first_name]" value="">
-        <input type="hidden" name="order_address[last_name]" value="">
-        <input type="hidden" name="order_address[phone_number]" value="">
-        <input type="hidden" name="order_address[address_1]" value="">
-        <input type="hidden" name="order_address[address_2]" value="">
-        <input type="hidden" name="order_address[city]" value="">
-        <input type="hidden" name="order_address[state]" value="">
-        <input type="hidden" name="order_address[zip]" value="">
-        <input type="hidden" name="order_address[country]" value="">
         
         <input type="hidden" name="total" value="{{ $order->present('amount') }}">
         <input type="hidden" name="ref" value="{{ $order->order_number }}">
-
-        <input type="hidden" name="product_sku" value="@foreach($order->items as $item){{ $item->sku_code??'-' }},@endforeach">
-
-        <input type="hidden" name="product_qty" value="@foreach($order->items as $item){{ $item->quantity??'-' }},@endforeach">
         
         {!! CoralsForm::formButtons(trans('Marketplace::labels.checkout.complete_order'), [], []) !!}
         {!! Form::close() !!}
@@ -127,38 +109,12 @@
                 $('.order-review input[name="UserName"]').val(name);
                 $('.order-review input[name="UserEmail"]').val(email);
                 $('.order-review input[name="UserContact"]').val(conta);
-
-                $('.order-review input[name="order_address[address_1]"]').val($('input[name="billing_address[address_1]"]').val());
-                $('.order-review input[name="order_address[address_2]"]').val($('input[name="billing_address[address_2]"]').val());
-                $('.order-review input[name="order_address[city]"]').val($('input[name="billing_address[city]"]').val());
-                $('.order-review input[name="order_address[state]"]').val($('input[name="billing_address[state]"]').val());
-                $('.order-review input[name="order_address[zip]"]').val($('input[name="billing_address[zip]"]').val());
-                $('.order-review input[name="order_address[country]"]').val($('select[name="billing_address[country]"]').val());
                 
 
                 // $('form.order-review').submit(function(e){
                 //     e.preventDefault();
 
                 // });
-
-
-                var pay = $("[name='payment']:checked").val();
-
-                if(pay=='ipay88'){
-
-                    $('form.order-review').attr('action','/aladin_market_place/ipay88-master/request.php');
-
-                    console.log(pay);
-
-                }else if(pay=='hoolah'){
-                    
-                    $('form.order-review').attr('action','/aladdin_staging/hoolah');
-
-                    $('form.order-review').attr('method','get');
-
-                    console.log(pay);
-
-                }
 
 
             });

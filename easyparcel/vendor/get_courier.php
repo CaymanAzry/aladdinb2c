@@ -99,17 +99,17 @@ if(isset($_GET)){
         }
     }
     
-    echo '<pre>';
-    print_r($customer);
-    echo '</pre><hr>';   
+    // echo '<pre>';
+    // print_r($customer);
+    // echo '</pre><hr>';   
 
-    echo '<pre>';
-    print_r($v_product);
-    echo '</pre><hr>'; 
+    // echo '<pre>';
+    // print_r($v_product);
+    // echo '</pre><hr>'; 
 
-    echo '<pre>';
-    print_r($vendor);
-    echo '</pre><hr>';
+    // echo '<pre>';
+    // print_r($vendor);
+    // echo '</pre><hr>';
 
     
     //fetch courier
@@ -141,26 +141,32 @@ if(isset($_GET)){
     
 
 
-    // $v_items[$items_v_no]['pick_code']=$vendor['marketplace_company_zip'];
-    // $v_items[$items_v_no]['pick_state']=$vendor['marketplace_company_state'];
-    // $v_items[$items_v_no]['pick_country']=$vendor['marketplace_company_country'];
+    $v_items[$items_v_no]['pick_code']=$vendor['marketplace_company_zip'];
+    $v_items[$items_v_no]['pick_state']=$vendor['marketplace_company_state'];
+    $v_items[$items_v_no]['pick_country']=$vendor['marketplace_company_country'];
+    $v_items[$items_v_no]['send_code']=$customer['billing_address']['zip'];
+    $v_items[$items_v_no]['send_state']=$customer['billing_address']['state'];
+    $v_items[$items_v_no]['send_country']=$customer['billing_address']['country'];
+
+    if($vendor['marketplace_company_zip']==''){
+        
+        echo 'You are not fill your address yet!';
+
+        return;
+
+    }
+    // $v_items[$items_v_no]['pick_code']="";
+    // $v_items[$items_v_no]['pick_state']="";
+    // $v_items[$items_v_no]['pick_country']="";
     // $v_items[$items_v_no]['send_code']=$customer['billing_address']['zip'];
     // $v_items[$items_v_no]['send_state']=$customer['billing_address']['state'];
     // $v_items[$items_v_no]['send_country']=$customer['billing_address']['country'];
 
 
-    $v_items[$items_v_no]['pick_code']="";
-    $v_items[$items_v_no]['pick_state']="";
-    $v_items[$items_v_no]['pick_country']="";
-    $v_items[$items_v_no]['send_code']=$customer['billing_address']['zip'];
-    $v_items[$items_v_no]['send_state']=$customer['billing_address']['state'];
-    $v_items[$items_v_no]['send_country']=$customer['billing_address']['country'];
 
-
-
-    echo '<pre>';
-    print_r($v_items);
-    echo '</pre><hr>';
+    // echo '<pre>';
+    // print_r($v_items);
+    // echo '</pre><hr>';
 
     $domain = "https://connect.easyparcel.my/?ac=";
 
@@ -202,12 +208,20 @@ if(isset($_GET)){
  
     echo '
 
-    <p>Courier:</p><select name="courier">';
- 
+    <form action="/aladdin_staging/easyparcel/vendor/awp_process.php" method="get" class="get_awb">
+
+    <p>Courier:</p><select name="courier" class="form-control">';
+    
+    echo '
+            <option value="0">-- Select Courier --</option>
+            ';
+
     foreach ($results as $result => $result_data) {
         for ($rno=0; $rno < count($result_data['rates']); $rno++) {
     
         if(count($result_data['rates'][$rno]['dropoff_point'])>0){
+
+
                         
             // echo '
                         
@@ -237,7 +251,7 @@ if(isset($_GET)){
 
             echo'
 
-            <div id="'.$result_data['rates'][$rno]['service_id'].'" style="border:1px solid black; width:100%; margin: 30px 0; padding: 30px;">
+            <div id="'.$result_data['rates'][$rno]['service_id'].'" class="courier-detail" style="border:1px solid black; width:100%; margin: 30px 0; padding: 30px; display:none">
 
                 <img src="'.$result_data['rates'][$rno]['courier_logo'].'" width="200px">
                 <p>Service    : '.$result_data['rates'][$rno]['service_name'].'</p>
@@ -265,9 +279,9 @@ if(isset($_GET)){
                     echo '
 
                         Service Method :
-                        <input type="radio" name="service_method" class="pg-service" row="'.$rno.'" value="dropoff">Point to Door
+                        <input type="radio" name="service_method" class="pg-service form-control" row="'.$rno.'" value="dropoff">Point to Door
 
-                        <input type="radio" name="service_method" class="pg-service" row="'.$rno.'" value="pgeon">Point to Point
+                        <input type="radio" name="service_method" class="pg-service form-control" row="'.$rno.'" value="pgeon">Point to Point
                     ';
 
 
@@ -332,12 +346,26 @@ if(isset($_GET)){
 
                                                   <br>
 
+
+
                                                   <input type="date" name="collect-date"><br><br>
-                                                  <input type="submit">
+                                                  <button type="button" class="make_order" id="'.$result_data['rates'][$rno]['service_id'].'">Submit</button>
 
                                             </div>
 
                                             ';
+
+                }else{
+
+                    echo '
+
+                        <input type="hidden" name="service_method" value="dropoff">
+
+                        <input type="date" name="collect-date"><br><br>
+                        <button type="button" class="make_order" id="'.$result_data['rates'][$rno]['service_id'].'">Submit</button>
+
+
+                    ';
 
                 }
 

@@ -26,6 +26,11 @@ $vendor = array();
 
 $v_product = array();
 
+
+foreach ( as $key => $value) {
+  # code...
+}
+
 $v_sql = "SELECT marketplace_orders.shipping,marketplace_orders.billing,marketplace_stores.id AS vendor_id FROM `marketplace_orders` JOIN marketplace_stores ON marketplace_orders.store_id=marketplace_stores.id WHERE marketplace_orders.id=" . $_GET['order_id'];
 
 $result = $conn->query($v_sql);

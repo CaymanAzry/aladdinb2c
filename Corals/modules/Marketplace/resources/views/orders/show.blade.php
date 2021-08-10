@@ -15,6 +15,7 @@
 
 
 @section('content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="row">
         <div class="col-md-8">
             @component('components.box')
@@ -113,39 +114,79 @@
 
                 {!! \Actions::do_action('marketplace_order_post_details', $order) !!}
             @endcomponent
-            <div class="card box mt-3 mb-3">
-                <div class="box-header card-header with-border ">
-                    <h3 class="box-title card-title ">Easy Parcel</h3>
-
-                    <div class="box-tools pull-right">
+            @component('components.box')
+                @slot('box_title')
+                    @lang('Easy Parcel')
+                @endslot
+                @if($order->transactions)
+                    <div class="ep-content">
                         
                     </div>
-                </div>
-                <div class="box-body card-body">
-                    <div class="table-responsive">
-                        <div class="ep-section">
+                    <script>
+                        jQuery.ajax({
+                            url: "/aladdin_staging/easyparcel/vendor/get_courier.php?order_id={{ $order->id }}",
+                            success: function (data) {
+
+                                $('.ep-content').html(data);
+                            },
+                            error: function (e) {
+                                console.log("ERROR : ", e);
+                            }
+                        });
+
+
+                        $(document).on('change','select[name="courier"]',function(){
+                            var courier = $(this).val();
+
+                            if(courier!='0'){
+                                
+                                $('.courier-detail').hide();
+                                $('#'+courier).show();
+                            }else{
+                                $('.courier-detail').hide();
+                            }
+
+                        });
+
+
+                        $(document).on('click','.make_order',function(){
+
+                            var service = $(this).attr('id');
+
+                            var method = $('#'+service+' input[name="service_method"]').val();
+
+                            alert(method);
+
+                            if(method=='dropoff'){
+                                jQuery.ajax({
+                                    url: "/aladdin_staging/easyparcel/vendor/awp_process.php?order_id={{ $order->id }}&service_id="+service,
+                                    success: function (data) {
+
+                                        $('.ep-content').html(data);
+                                    },
+                                    error: function (e) {
+                                        console.log("ERROR : ", e);
+                                    }
+                                });
+                            }else{
+                                jQuery.ajax({
+                                    url: "/aladdin_staging/easyparcel/vendor/awp_process.php?order_id={{ $order->id }}",
+                                    success: function (data) {
+
+                                        $('.ep-content').html(data);
+                                    },
+                                    error: function (e) {
+                                        console.log("ERROR : ", e);
+                                    }
+                                });
+                            }
+
                             
-                        </div>
-<!--                                     <table class="table color-table info-table table table-hover table-striped table-condensed ep-table">
-                                        <thead>
-                                        <tr>
-                                            <th>EP Order No.</th>
-                                            <th>Courier</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="3">{{ $order->id }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>-->
-                                </div>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer card-footer hidden"></div>
-                <!-- /.box-footer-->
-            </div>
+
+                        });
+                    </script>
+                @endif
+            @endcomponent
             @component('components.box')
                 @slot('box_title')
                     @lang('Marketplace::labels.order.transactions.title')
@@ -177,7 +218,6 @@
                     </div>
                 @endif
             @endcomponent
-
 
         </div>
         <div class="col-md-4">
